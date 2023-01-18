@@ -11,6 +11,8 @@ class ViewController: UIViewController {
     var timer = Timer()
     let dateFormatter = DateFormatter()
     var countdownTimer = Timer()
+    var secondsLeft = 0
+    var selectedTime : Date;
     
     @IBOutlet weak var liveClockLabel: UILabel!
     @IBOutlet weak var backgroundImage: UIImageView!
@@ -18,11 +20,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var userTimePicker: UIDatePicker!
     @IBOutlet weak var timerButton: UIButton!
     
+    @IBAction func userTimePickerChanged(_ sender: UIDatePicker) {
+        if (remainingTimeLabel.text == "Remaining Time") {
+            selectedTime = userTimePicker.date
+        }
+    }
+    
     @IBAction func startTimer(_ sender: UIButton) {
         if (timerButton.titleLabel!.text == "Start Timer" && remainingTimeLabel.text == "Remaining Time") {
             remainingTimeLabel.text = "Time Remaining: /(userTimePicker.date)"
             
-            countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.startCountdown) , userInfo: nil, repeats: true)
+            
+//            secondsLeft =
+            countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateRemainingTimeLabel) , userInfo: nil, repeats: true)
         } else if (timerButton.titleLabel!.text == "Stop Music") {
             timerButton.titleLabel!.text = "Start Timer"
             remainingTimeLabel.text = "Remaining Time"
@@ -31,7 +41,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @objc func startCountdown() {
+    @objc func updateRemainingTimeLabel() {
         
     }
     
