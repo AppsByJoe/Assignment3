@@ -42,6 +42,9 @@
                                                         <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </backgroundConfiguration>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="startTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LAX-58-JtI"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remaining Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kN4-81-8O0">
                                                 <rect key="frame" x="135.66666666666666" y="588" width="121.66666666666666" height="196"/>
@@ -77,6 +80,8 @@
                     <connections>
                         <outlet property="backgroundImage" destination="qrR-rB-p7B" id="SWc-db-gz2"/>
                         <outlet property="liveClockLabel" destination="vWa-mA-BF2" id="B6h-jn-n7P"/>
+                        <outlet property="remainingTimeLabel" destination="kN4-81-8O0" id="Uiw-3g-nY2"/>
+                        <outlet property="userTimePicker" destination="ssF-gl-a0n" id="OXp-UX-5pX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

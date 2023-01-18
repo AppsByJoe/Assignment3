@@ -10,10 +10,23 @@ import UIKit
 class ViewController: UIViewController {
     var timer = Timer()
     let dateFormatter = DateFormatter()
+    var countdownTimer = Timer()
     
     @IBOutlet weak var liveClockLabel: UILabel!
-    
     @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var remainingTimeLabel: UILabel!
+    @IBOutlet weak var userTimePicker: UIDatePicker!
+    
+    @IBAction func startTimer(_ sender: UIButton) {
+        remainingTimeLabel.text = "Time Remaining: /(userTimePicker.date)"
+        
+        countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.startCountdown) , userInfo: nil, repeats: true)
+    }
+    
+    @objc func startCountdown() {
+        
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
