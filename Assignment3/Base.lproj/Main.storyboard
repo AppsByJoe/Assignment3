@@ -16,51 +16,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="xbu-hf-nBa">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LiveClock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWa-mA-BF2">
-                                        <rect key="frame" x="159.66666666666666" y="0.0" width="74" height="114.66666666666667"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" style="wheels" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssF-gl-a0n">
-                                        <rect key="frame" x="36.666666666666657" y="214.66666666666669" width="320" height="115"/>
-                                    </datePicker>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHj-tT-nHg">
-                                        <rect key="frame" x="142" y="429.66666666666669" width="109.33333333333331" height="114.66666666666669"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Start Timer" cornerStyle="capsule">
-                                            <backgroundConfiguration key="background">
-                                                <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </backgroundConfiguration>
-                                        </buttonConfiguration>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remaining Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kN4-81-8O0">
-                                        <rect key="frame" x="135.66666666666666" y="644.33333333333337" width="121.66666666666666" height="114.66666666666663"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </stackView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AM" translatesAutoresizingMaskIntoConstraints="NO" id="qrR-rB-p7B">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="47t-dJ-IVp">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                            </imageView>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AM" translatesAutoresizingMaskIntoConstraints="NO" id="qrR-rB-p7B">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xbu-hf-nBa">
+                                        <rect key="frame" x="0.0" y="34" width="393" height="784"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LiveClock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWa-mA-BF2">
+                                                <rect key="frame" x="159.66666666666666" y="0.0" width="74" height="196"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" style="wheels" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssF-gl-a0n">
+                                                <rect key="frame" x="36.666666666666657" y="196" width="320" height="196"/>
+                                            </datePicker>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHj-tT-nHg">
+                                                <rect key="frame" x="142" y="392" width="109.33333333333331" height="196"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Start Timer" cornerStyle="capsule">
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remaining Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kN4-81-8O0">
+                                                <rect key="frame" x="135.66666666666666" y="588" width="121.66666666666666" height="196"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="qrR-rB-p7B" secondAttribute="trailing" id="8H9-PF-BZC"/>
+                                    <constraint firstItem="qrR-rB-p7B" firstAttribute="leading" secondItem="47t-dJ-IVp" secondAttribute="leading" id="AZx-RZ-L87"/>
+                                    <constraint firstItem="qrR-rB-p7B" firstAttribute="top" secondItem="47t-dJ-IVp" secondAttribute="top" id="CoZ-lY-60x"/>
+                                    <constraint firstAttribute="trailing" secondItem="xbu-hf-nBa" secondAttribute="trailing" id="FRd-Ux-lfW"/>
+                                    <constraint firstItem="xbu-hf-nBa" firstAttribute="top" secondItem="47t-dJ-IVp" secondAttribute="top" constant="34" id="Wov-qS-ng7"/>
+                                    <constraint firstItem="xbu-hf-nBa" firstAttribute="leading" secondItem="47t-dJ-IVp" secondAttribute="leading" id="mvG-YJ-1Wl"/>
+                                    <constraint firstAttribute="bottom" secondItem="xbu-hf-nBa" secondAttribute="bottom" constant="34" id="v0f-l0-FiE"/>
+                                    <constraint firstAttribute="bottom" secondItem="qrR-rB-p7B" secondAttribute="bottom" id="zWN-da-0ru"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="xbu-hf-nBa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="08w-0V-CLg"/>
-                            <constraint firstAttribute="bottom" secondItem="xbu-hf-nBa" secondAttribute="bottom" constant="34" id="9RC-SA-msF"/>
-                            <constraint firstItem="qrR-rB-p7B" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Thx-uU-dY5"/>
-                            <constraint firstAttribute="bottom" secondItem="qrR-rB-p7B" secondAttribute="bottom" id="XfP-dp-Iwq"/>
-                            <constraint firstItem="qrR-rB-p7B" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Z1f-UF-6Sd"/>
-                            <constraint firstAttribute="trailing" secondItem="xbu-hf-nBa" secondAttribute="trailing" id="Zwm-6e-Yzm"/>
-                            <constraint firstItem="qrR-rB-p7B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kTD-d5-5cc"/>
-                            <constraint firstItem="xbu-hf-nBa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uvL-K6-FrF"/>
+                            <constraint firstAttribute="trailing" secondItem="47t-dJ-IVp" secondAttribute="trailing" id="NEW-H7-P7m"/>
+                            <constraint firstItem="47t-dJ-IVp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="PrK-YQ-QD8"/>
+                            <constraint firstAttribute="bottom" secondItem="47t-dJ-IVp" secondAttribute="bottom" id="QbZ-mT-HnJ"/>
+                            <constraint firstItem="47t-dJ-IVp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vSC-PW-5Sh"/>
                         </constraints>
                     </view>
                     <connections>
