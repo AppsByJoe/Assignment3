@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     var countdownTimer = Timer()
     var secondsLeft : Int = 60
     //TODO: broken av player
-    var avPlayer = AVAudioPlayer()
+    var avPlayer : AVPlayer!
     
     @IBOutlet weak var liveClockLabel: UILabel!
     @IBOutlet weak var backgroundImage: UIImageView!
@@ -40,7 +40,9 @@ class ViewController: UIViewController {
             secondsLeft = 60
             
             //TODO: stop music
-            avPlayer.pause()
+            avPlayer?.pause()
+        } else {
+            print("no u")
         }
     }
     
@@ -52,7 +54,7 @@ class ViewController: UIViewController {
             formatRemainingTimeLabel()
             timerButton.titleLabel!.text = "Stop Music"
             //TODO: start music
-            avPlayer.play()
+            avPlayer?.play()
             //TODO: Invalidate doesn't allow multiple timers?
             countdownTimer.invalidate()
         }
@@ -80,11 +82,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //TODO: broken av player
-        guard let path = Bundle.main.path(forResource: "musicClip", ofType:"mp3") else {return}
+        guard let url = Bundle.main.url(forResource: "musicClip", withExtension: "mp3") else {
+            print("nope")
+            return
+        }
         do {
-            avPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-        } catch {}
+            avPlayer = try AVPlayer(url: url)
+        } catch {
+            print("nope again")
+        }
         
+//        avPlayer.numberOfLoops = -1
+        
+        //TODO: LiveClockLabel timer no longer works???
         dateFormatter.dateFormat = "E, d MMM yyyy HH:mm:ss"
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateLiveClockLabel) , userInfo: nil, repeats: true)
     }

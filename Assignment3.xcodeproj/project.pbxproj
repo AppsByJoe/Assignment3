@@ -13,6 +13,7 @@
 		EC3A29CC297844CE007A8420 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC3A29CA297844CE007A8420 /* Main.storyboard */; };
 		EC3A29CE297844CF007A8420 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC3A29CD297844CF007A8420 /* Assets.xcassets */; };
 		EC3A29D1297844CF007A8420 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC3A29CF297844CF007A8420 /* LaunchScreen.storyboard */; };
+		EC3A29D92978B889007A8420 /* musicClip.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EC3A29D82978B889007A8420 /* musicClip.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		EC3A29CD297844CF007A8420 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC3A29D0297844CF007A8420 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC3A29D2297844CF007A8420 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC3A29D82978B889007A8420 /* musicClip.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = musicClip.mp3; path = ../../musicClip.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				EC3A29CD297844CF007A8420 /* Assets.xcassets */,
 				EC3A29CF297844CF007A8420 /* LaunchScreen.storyboard */,
 				EC3A29D2297844CF007A8420 /* Info.plist */,
+				EC3A29D82978B889007A8420 /* musicClip.mp3 */,
 			);
 			path = Assignment3;
 			sourceTree = "<group>";
@@ -125,6 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC3A29D92978B889007A8420 /* musicClip.mp3 in Resources */,
 				EC3A29D1297844CF007A8420 /* LaunchScreen.storyboard in Resources */,
 				EC3A29CE297844CF007A8420 /* Assets.xcassets in Resources */,
 				EC3A29CC297844CE007A8420 /* Main.storyboard in Resources */,
