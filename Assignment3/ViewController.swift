@@ -30,8 +30,10 @@ class ViewController: UIViewController {
         if (timerButton.titleLabel!.text == "Start Timer" && remainingTimeLabel.text == "Remaining Time") {
             remainingTimeLabel.text = "Time Remaining: /(userTimePicker.date)"
             
+            var hours = Calendar.current.dateComponents([.hour], from: selectedTime).hour!
+            var minutes = Calendar.current.dateComponents([.minute], from: selectedTime).minute!
+            secondsLeft = hours * 3600 + minutes * 60
             
-//            secondsLeft =
             countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateRemainingTimeLabel) , userInfo: nil, repeats: true)
         } else if (timerButton.titleLabel!.text == "Stop Music") {
             timerButton.titleLabel!.text = "Start Timer"
