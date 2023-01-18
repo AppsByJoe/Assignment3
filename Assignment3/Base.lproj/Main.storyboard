@@ -26,7 +26,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" style="wheels" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssF-gl-a0n">
-                                        <rect key="frame" x="37" y="215" width="320" height="115"/>
+                                        <rect key="frame" x="36.666666666666657" y="214.66666666666669" width="320" height="115"/>
                                     </datePicker>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHj-tT-nHg">
                                         <rect key="frame" x="142" y="429.66666666666669" width="109.33333333333331" height="114.66666666666669"/>
@@ -55,6 +55,9 @@
                             <constraint firstItem="xbu-hf-nBa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uvL-K6-FrF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="liveClockLabel" destination="vWa-mA-BF2" id="B6h-jn-n7P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
