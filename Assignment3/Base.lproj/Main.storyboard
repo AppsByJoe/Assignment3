@@ -44,27 +44,37 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </stackView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AM" translatesAutoresizingMaskIntoConstraints="NO" id="qrR-rB-p7B">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="xbu-hf-nBa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="08w-0V-CLg"/>
                             <constraint firstAttribute="bottom" secondItem="xbu-hf-nBa" secondAttribute="bottom" constant="34" id="9RC-SA-msF"/>
+                            <constraint firstItem="qrR-rB-p7B" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Thx-uU-dY5"/>
+                            <constraint firstAttribute="bottom" secondItem="qrR-rB-p7B" secondAttribute="bottom" id="XfP-dp-Iwq"/>
+                            <constraint firstItem="qrR-rB-p7B" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Z1f-UF-6Sd"/>
                             <constraint firstAttribute="trailing" secondItem="xbu-hf-nBa" secondAttribute="trailing" id="Zwm-6e-Yzm"/>
+                            <constraint firstItem="qrR-rB-p7B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kTD-d5-5cc"/>
                             <constraint firstItem="xbu-hf-nBa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uvL-K6-FrF"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundImage" destination="qrR-rB-p7B" id="SWc-db-gz2"/>
                         <outlet property="liveClockLabel" destination="vWa-mA-BF2" id="B6h-jn-n7P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-27" y="4"/>
+            <point key="canvasLocation" x="-28.244274809160306" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
+        <image name="AM" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

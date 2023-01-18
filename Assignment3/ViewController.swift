@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var liveClockLabel: UILabel!
     
+    @IBOutlet weak var backgroundImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -22,6 +24,11 @@ class ViewController: UIViewController {
 
     @objc func updateLiveClockLabel() {
         liveClockLabel.text = dateFormatter.string(from: Date())
+        if (Calendar.current.component(.hour, from: Date()) > 12) {
+            backgroundImage.image = UIImage(named: "PM")
+        } else {
+            backgroundImage.image = UIImage(named: "AM")
+        }
     }
 }
 
