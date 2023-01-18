@@ -12,9 +12,9 @@ class ViewController: UIViewController {
     var timer = Timer()
     let dateFormatter = DateFormatter()
     var countdownTimer = Timer()
-    var secondsLeft : Int = 60
+    var secondsLeft : Int = 10
     //TODO: broken av player
-    var avPlayer : AVPlayer!
+    var avPlayer : AVAudioPlayer!
     
     @IBOutlet weak var liveClockLabel: UILabel!
     @IBOutlet weak var backgroundImage: UIImageView!
@@ -38,7 +38,6 @@ class ViewController: UIViewController {
             timerButton.titleLabel!.text = "Start Timer"
             remainingTimeLabel.text = "Remaining Time"
             secondsLeft = 60
-            
             //TODO: stop music
             avPlayer?.pause()
         } else {
@@ -87,12 +86,12 @@ class ViewController: UIViewController {
             return
         }
         do {
-            avPlayer = try AVPlayer(url: url)
+            avPlayer = try AVAudioPlayer(contentsOf: url)
         } catch {
             print("nope again")
         }
         
-//        avPlayer.numberOfLoops = -1
+        avPlayer.numberOfLoops = -1
         
         //TODO: LiveClockLabel timer no longer works???
         dateFormatter.dateFormat = "E, d MMM yyyy HH:mm:ss"
