@@ -16,11 +16,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var remainingTimeLabel: UILabel!
     @IBOutlet weak var userTimePicker: UIDatePicker!
+    @IBOutlet weak var timerButton: UIButton!
     
     @IBAction func startTimer(_ sender: UIButton) {
-        remainingTimeLabel.text = "Time Remaining: /(userTimePicker.date)"
-        
-        countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.startCountdown) , userInfo: nil, repeats: true)
+        if (timerButton.titleLabel!.text == "Start Timer" && remainingTimeLabel.text == "Remaining Time") {
+            remainingTimeLabel.text = "Time Remaining: /(userTimePicker.date)"
+            
+            countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.startCountdown) , userInfo: nil, repeats: true)
+        } else if (timerButton.titleLabel!.text == "Stop Music") {
+            timerButton.titleLabel!.text = "Start Timer"
+            remainingTimeLabel.text = "Remaining Time"
+            
+            //stop music
+        }
     }
     
     @objc func startCountdown() {
