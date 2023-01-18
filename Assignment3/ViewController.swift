@@ -22,18 +22,20 @@ class ViewController: UIViewController {
     
     @IBAction func userTimePickerChanged(_ sender: UIDatePicker) {
         if (remainingTimeLabel.text == "Remaining Time") {
+            //TODO
             selectedTime = userTimePicker.date
         }
     }
     
     @IBAction func startTimer(_ sender: UIButton) {
         if (timerButton.titleLabel!.text == "Start Timer" && remainingTimeLabel.text == "Remaining Time") {
+            //TODO: bring hours and minutes out???
             var hours = Calendar.current.dateComponents([.hour], from: selectedTime).hour!
             var minutes = Calendar.current.dateComponents([.minute], from: selectedTime).minute!
             secondsLeft = hours * 3600 + minutes * 60
             
             //TODO: format date output????
-            remainingTimeLabel.text = "Time Remaining: /(userTimePicker.date)"
+            remainingTimeLabel.text = "Time Remaining: \(selectedTime)"
             
             countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateRemainingTimeLabel) , userInfo: nil, repeats: true)
         } else if (timerButton.titleLabel!.text == "Stop Music") {
