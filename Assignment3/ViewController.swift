@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     var timer = Timer()
     let dateFormatter = DateFormatter()
     var countdownTimer = Timer()
     var secondsLeft : Int = 60
+    //TODO: broken av player
+    var avPlayer = AVAudioPlayer()
     
     @IBOutlet weak var liveClockLabel: UILabel!
     @IBOutlet weak var backgroundImage: UIImageView!
@@ -28,7 +31,6 @@ class ViewController: UIViewController {
     @IBAction func startTimer(_ sender: UIButton) {
         if (timerButton.titleLabel!.text == "Start Timer" && remainingTimeLabel.text == "Remaining Time") {
             
-            secondsLeft -= 1
             formatRemainingTimeLabel()
             
             countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateRemainingTimeLabel) , userInfo: nil, repeats: true)
@@ -38,6 +40,7 @@ class ViewController: UIViewController {
             secondsLeft = 60
             
             //TODO: stop music
+            avPlayer.pause()
         }
     }
     
@@ -46,9 +49,10 @@ class ViewController: UIViewController {
             formatRemainingTimeLabel()
             secondsLeft -= 1
         } else {
+            formatRemainingTimeLabel()
             timerButton.titleLabel!.text = "Stop Music"
             //TODO: start music
-            
+            avPlayer.play()
             //TODO: Invalidate doesn't allow multiple timers?
             countdownTimer.invalidate()
         }
@@ -75,6 +79,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        //TODO: broken av player
+        guard let path = Bundle.main.path(forResource: "musicClip", ofType:"mp3") else {return}
+        do {
+            avPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+        } catch {}
+        
         dateFormatter.dateFormat = "E, d MMM yyyy HH:mm:ss"
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateLiveClockLabel) , userInfo: nil, repeats: true)
     }
