@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     let dateFormatter = DateFormatter()
     var countdownTimer = Timer()
     var secondsLeft = 0
-    var selectedTime : Date;
+    var selectedTime = Date();
     
     @IBOutlet weak var liveClockLabel: UILabel!
     @IBOutlet weak var backgroundImage: UIImageView!

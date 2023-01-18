@@ -33,6 +33,9 @@
                                             </label>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" style="wheels" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssF-gl-a0n">
                                                 <rect key="frame" x="36.666666666666657" y="196" width="320" height="196"/>
+                                                <connections>
+                                                    <action selector="userTimePickerChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="UW1-Ja-E3u"/>
+                                                </connections>
                                             </datePicker>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHj-tT-nHg">
                                                 <rect key="frame" x="142" y="392" width="109.33333333333331" height="196"/>
