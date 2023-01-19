@@ -13,7 +13,6 @@ class ViewController: UIViewController {
     let dateFormatter = DateFormatter()
     var countdownTimer = Timer()
     var secondsLeft : Int = 3
-    //TODO: broken av player
     var avPlayer : AVAudioPlayer!
     var timerFlag = "off"
     
@@ -24,7 +23,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var timerButton: UIButton!
     
     @IBAction func userTimePickerChanged(_ sender: UIDatePicker) {
-        if (remainingTimeLabel.text == "Remaining Time") {
+        if (remainingTimeLabel.text == "Waiting...") {
             secondsLeft = Int(userTimePicker.countDownDuration)
         }
     }
@@ -34,21 +33,15 @@ class ViewController: UIViewController {
             print("I'm in!")
             countdownTimer.invalidate()
             formatRemainingTimeLabel()
-            
             countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateRemainingTimeLabel) , userInfo: nil, repeats: true)
             timerFlag = "running"
         } else if (timerFlag == "alarming") {
-            //TODO: stop music
-            avPlayer?.pause()
             print("I'm in again!")
-//            timerButton.titleLabel!.text = "Start Timer"
-            remainingTimeLabel.text = "Remaining Time"
+            avPlayer?.pause()
+            remainingTimeLabel.text = "Waiting..."
             secondsLeft = 60
             timerFlag = "off"
         } else if (timerFlag == "running"){
-//            avPlayer?.pause()
-//            remainingTimeLabel.text = "Remaining Time"
-//            secondsLeft = 60
             print("no u")
         }
     }
@@ -62,9 +55,7 @@ class ViewController: UIViewController {
             print("tock")
             formatRemainingTimeLabel()
             timerButton.titleLabel!.text = "Stop Music"
-            //TODO: start music
             avPlayer?.play()
-            //TODO: Invalidate doesn't allow multiple timers?
             countdownTimer.invalidate()
             timerFlag = "alarming"
         }
@@ -91,7 +82,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        //TODO: broken av player
         guard let url = Bundle.main.url(forResource: "musicClip", withExtension: "mp3") else {
             print("nope")
             return
@@ -101,10 +91,8 @@ class ViewController: UIViewController {
         } catch {
             print("nope again")
         }
-        
         avPlayer.numberOfLoops = -1
-        
-        //TODO: LiveClockLabel timer no longer works???
+    
         dateFormatter.dateFormat = "E, d MMM yyyy HH:mm:ss"
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateLiveClockLabel) , userInfo: nil, repeats: true)
     }
