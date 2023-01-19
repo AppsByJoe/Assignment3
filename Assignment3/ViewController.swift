@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     var timer = Timer()
     let dateFormatter = DateFormatter()
     var countdownTimer = Timer()
-    var secondsLeft : Int = 3
+    var secondsLeft : Int = 60
     var avPlayer : AVAudioPlayer!
     var timerFlag = "off"
     
@@ -30,13 +30,11 @@ class ViewController: UIViewController {
     
     @IBAction func startTimer(_ sender: UIButton) {
         if (timerFlag == "off") {
-            print("I'm in!")
             countdownTimer.invalidate()
             formatRemainingTimeLabel()
             countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateRemainingTimeLabel) , userInfo: nil, repeats: true)
             timerFlag = "running"
         } else if (timerFlag == "alarming") {
-            print("I'm in again!")
             avPlayer?.pause()
             remainingTimeLabel.text = "Waiting..."
             secondsLeft = 60
@@ -50,9 +48,7 @@ class ViewController: UIViewController {
         if (secondsLeft > 0) {
             formatRemainingTimeLabel()
             secondsLeft -= 1
-            print("tick")
         } else {
-            print("tock")
             formatRemainingTimeLabel()
             timerButton.titleLabel!.text = "Stop Music"
             avPlayer?.play()
@@ -78,18 +74,16 @@ class ViewController: UIViewController {
         remainingTimeLabel.text = "Time Remaining: \(hoursRemaining):\(minutesRemaining):\(secondsRemaining)"
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         guard let url = Bundle.main.url(forResource: "musicClip", withExtension: "mp3") else {
-            print("nope")
             return
         }
         do {
             avPlayer = try AVAudioPlayer(contentsOf: url)
         } catch {
-            print("nope again")
+            print("error")
         }
         avPlayer.numberOfLoops = -1
     
