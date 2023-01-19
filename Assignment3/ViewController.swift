@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     var secondsLeft : Int = 3
     //TODO: broken av player
     var avPlayer : AVAudioPlayer!
+    var timerFlag = "off"
     
     @IBOutlet weak var liveClockLabel: UILabel!
     @IBOutlet weak var backgroundImage: UIImageView!
@@ -29,21 +30,22 @@ class ViewController: UIViewController {
     }
     
     @IBAction func startTimer(_ sender: UIButton) {
-        if (timerButton.titleLabel!.text == "Start Timer" && remainingTimeLabel.text == "Remaining Time") {
+        if (timerFlag == "off") {
             print("I'm in!")
             countdownTimer.invalidate()
             formatRemainingTimeLabel()
             
             countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateRemainingTimeLabel) , userInfo: nil, repeats: true)
-        } else if (remainingTimeLabel.text != "Remaining Time") {
+            timerFlag = "running"
+        } else if (timerFlag == "alarming") {
             //TODO: stop music
             avPlayer?.pause()
             print("I'm in again!")
-            
 //            timerButton.titleLabel!.text = "Start Timer"
             remainingTimeLabel.text = "Remaining Time"
-//            secondsLeft = 60
-        } else {
+            secondsLeft = 60
+            timerFlag = "off"
+        } else if (timerFlag == "running"){
 //            avPlayer?.pause()
 //            remainingTimeLabel.text = "Remaining Time"
 //            secondsLeft = 60
@@ -64,6 +66,7 @@ class ViewController: UIViewController {
             avPlayer?.play()
             //TODO: Invalidate doesn't allow multiple timers?
             countdownTimer.invalidate()
+            timerFlag = "alarming"
         }
     }
     
