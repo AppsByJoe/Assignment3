@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     var timer = Timer()
     let dateFormatter = DateFormatter()
     var countdownTimer = Timer()
-    var secondsLeft : Int = 10
+    var secondsLeft : Int = 3
     //TODO: broken av player
     var avPlayer : AVAudioPlayer!
     
@@ -30,17 +30,23 @@ class ViewController: UIViewController {
     
     @IBAction func startTimer(_ sender: UIButton) {
         if (timerButton.titleLabel!.text == "Start Timer" && remainingTimeLabel.text == "Remaining Time") {
-            
+            print("I'm in!")
+            countdownTimer.invalidate()
             formatRemainingTimeLabel()
             
             countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateRemainingTimeLabel) , userInfo: nil, repeats: true)
-        } else if (timerButton.titleLabel!.text == "Stop Music") {
-            timerButton.titleLabel!.text = "Start Timer"
-            remainingTimeLabel.text = "Remaining Time"
-            secondsLeft = 60
+        } else if (remainingTimeLabel.text != "Remaining Time") {
             //TODO: stop music
             avPlayer?.pause()
+            print("I'm in again!")
+            
+//            timerButton.titleLabel!.text = "Start Timer"
+            remainingTimeLabel.text = "Remaining Time"
+//            secondsLeft = 60
         } else {
+//            avPlayer?.pause()
+//            remainingTimeLabel.text = "Remaining Time"
+//            secondsLeft = 60
             print("no u")
         }
     }
@@ -49,7 +55,9 @@ class ViewController: UIViewController {
         if (secondsLeft > 0) {
             formatRemainingTimeLabel()
             secondsLeft -= 1
+            print("tick")
         } else {
+            print("tock")
             formatRemainingTimeLabel()
             timerButton.titleLabel!.text = "Stop Music"
             //TODO: start music
